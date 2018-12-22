@@ -1,0 +1,18 @@
+
+Sat Nov 17 14:43:45 CET 2018
+================================================================================
+Start of user code Azurevm_Kind_terminate_action
+	/**
+	 * Implement OCCI action:
+     * - scheme: http://org.eclipse.cmf.occi.multicloud.modemoazure/azurevm/action#
+     * - term: terminate
+     * - title: 
+	 */
+	@Override
+	public void terminate()
+	{
+		LOGGER.debug("Action terminate() called on " + this);
+
+		// TODO: Implement how to terminate this azurevm.
+	}
+	// End of user code

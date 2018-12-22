@@ -1,0 +1,58 @@
+
+Sat Nov 17 16:13:27 CET 2018
+================================================================================
+Start of user code Ec2_Kind_terminate_action
+	/**
+	 * Implement OCCI action:
+     * - scheme: http://org.eclipse.cmf.occi.multicloud.modemoec2/ec2/action#
+     * - term: terminate
+     * - title: 
+	 */
+	
+	//AssociateAddressRequest associate_request =
+    //new AssociateAddressRequest()
+    //.withInstanceId("i-06d9f1369fe4d9b07")
+    //.withPublicIp("63.32.125.42");
+    //.withAllocationId(allocation_id);
+	
+	@Override
+	public void terminate()
+	{
+		LOGGER.debug("Action terminate() called on " + this);
+		LOGGER.debug("instance id  "+ getInstanceID());
+		    //AmazonEC2 ec2 = new AmazonEC2Client(credentials);  // not sure if it's working
+		    AmazonEC2 ec2Client = AmazonEC2ClientBuilder
+					  .standard()
+					  .withCredentials(new AWSStaticCredentialsProvider(credentials))
+					  .build();
+		    
+		    ////// here
+		    
+		    
+		    
+		/////////////////////// terminate ///////////////
+		    //TerminateInstancesRequest request1 = new TerminateInstancesRequest().withInstanceIds(instanceid);
+		    //List<String> instanceIds = null;
+		    System.out.println("instance id " + getInstanceID());
+		    //instanceIds.add(instanceid);
+		   // TerminateInstancesRequest request1 = new TerminateInstancesRequest().withInstanceIds(instanceid);
+		   // TerminateInstancesResult result;
+		   // try {
+		   //     //result = ec2Client.terminateInstances(request1);
+		   // 	ec2Client.terminateInstances(request1);
+		   // } catch (AmazonServiceException ase) {
+		   //     //System.out.println("Terminate Instances command returned the error code {} " +  ase.getErrorCode());
+		   //     //throw ase;
+		   // }
+		   // TerminateInstancesRequest terminateInstancesRequest = new TerminateInstancesRequest();
+		   //         //terminateInstancesRequest.setInstanceIds(instanceIds);
+		    //        terminateInstancesRequest.withInstanceIds(instanceid);
+		     //       TerminateInstancesResult terminateInstancesResult = ec2Client.terminateInstances(terminateInstancesRequest);
+		            
+		    TerminateInstancesRequest terminateInstanceRequest = new TerminateInstancesRequest();
+			//terminateInstanceRequest.setInstanceIds(instanceIds);
+		    terminateInstanceRequest.withInstanceIds(getInstanceID());
+			ec2Client.terminateInstances(terminateInstanceRequest);
+
+	}
+	// End of user code

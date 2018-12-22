@@ -1,0 +1,1181 @@
+\section{OCCI docker extension}
+\begin{center}
+\begin{tabular}{|l|l|}
+  \hline
+  \textbf{Name} & docker \\
+  \hline  
+  \textbf{Scheme} & http://occiware.org/occi/docker\# \\
+  \hline
+  \textbf{Specification} &  \\
+  \hline
+\end{tabular}
+\end{center}
+
+\subsection{Imported OCCI extensions}
+
+\begin{center} 
+\begin{tabular}{|l|l|}
+  \hline
+  \textbf{Name} & core \\
+  \hline  
+  \textbf{Scheme} & http://schemas.ogf.org/occi/core\# \\
+  \hline
+\end{tabular}
+\end{center}
+\begin{center} 
+\begin{tabular}{|l|l|}
+  \hline
+  \textbf{Name} & infrastructure \\
+  \hline  
+  \textbf{Scheme} & http://schemas.ogf.org/occi/infrastructure\# \\
+  \hline
+\end{tabular}
+\end{center}
+
+
+\subsection{Types}
+\subsubsection{\texttt{ArrayOfString} type}
+
+\begin{itemize}
+\item \textbf{Basic type:} String
+\end{itemize}
+\subsubsection{\texttt{Mode} type}
+
+\textbf{Literals}
+\begin{itemize}
+\item \textbf{readWrite} 
+\end{itemize}
+\begin{itemize}
+\item \textbf{read} 
+\end{itemize}
+
+\subsection{Kinds}
+\subsubsection{\texttt{Container} kind}
+\begin{center}
+\begin{tabular}{|l|l|}
+  \hline
+  \textbf{Name} & Container \\
+  \hline  
+  \textbf{Scheme} & http://occiware.org/occi/docker\# \\
+  \hline
+  \textbf{Title} & Container Resource \\
+  \hline
+  \textbf{Parent} & Compute (http://schemas.ogf.org/occi/infrastructure\#) \\
+  \hline
+\end{tabular}
+\end{center}
+\begin{itemize}
+\item \textbf{\texttt{Container} attributes}
+
+\begin{tabularx}{\textwidth}{|l|l|p{1.4cm}|p{1.3cm}|l|X|}
+  \hline
+  \textbf{Attribute} & \textbf{Type} & \textbf{Required} & \textbf{Mutable} & \textbf{Default} & \textbf{Description} \\
+  \hline  
+  name & String & false & true &  &  \\
+  \hline
+  containerid & String & false & true &  &  \\
+  \hline
+  image & String & false & true &  &  \\
+  \hline
+  build & String & false & true &  &  \\
+  \hline
+  command & String & false & true &  &  \\
+  \hline
+  ports & ArrayOfString & false & true &  &  \\
+  \hline
+  expose & ArrayOfString & false & true &  &  \\
+  \hline
+  volumes & ArrayOfString & false & true &  &  \\
+  \hline
+  environment & ArrayOfString & false & true &  &  \\
+  \hline
+  envFile & ArrayOfString & false & true &  &  \\
+  \hline
+  net & String & false & true &  &  \\
+  \hline
+  dns & ArrayOfString & false & true &  &  \\
+  \hline
+  dnsSearch & ArrayOfString & false & true &  &  \\
+  \hline
+  capAdd & ArrayOfString & false & true &  &  \\
+  \hline
+  capDrop & ArrayOfString & false & true &  &  \\
+  \hline
+  workingDir & String & false & true &  &  \\
+  \hline
+  entrypoint & String & false & true &  &  \\
+  \hline
+  user & String & false & true &  &  \\
+  \hline
+  domainName & String & false & true &  &  \\
+  \hline
+  memLimit & Integer & false & true &  &  \\
+  \hline
+  memorySwap & Integer & false & true &  &  \\
+  \hline
+  privileged & Boolean & false & true & false &  \\
+  \hline
+  restart & String & false & true &  &  \\
+  \hline
+  stdinOpen & Boolean & false & true & false &  \\
+  \hline
+  interactive & Boolean & false & true & false &  \\
+  \hline
+  cpuShares & Integer & false & true & 0 &  \\
+  \hline
+  pid & String & false & true &  &  \\
+  \hline
+  ipc & String & false & true &  &  \\
+  \hline
+  addHost & ArrayOfString & false & true &  &  \\
+  \hline
+  macAddress & Mac & false & true &  &  \\
+  \hline
+  rm & Boolean & false & true &  &  \\
+  \hline
+  securityOpt & ArrayOfString & false & true &  &  \\
+  \hline
+  device & ArrayOfString & false & true &  &  \\
+  \hline
+  lxcConf & ArrayOfString & false & true &  &  \\
+  \hline
+  publishAll & Boolean & false & true & false &  \\
+  \hline
+  readOnly & Boolean & false & true & false &  \\
+  \hline
+  monitored & Boolean & false & true & false &  \\
+  \hline
+  cpuUsed & Integer & false & true &  &  \\
+  \hline
+  memoryUsed & Integer & false & true &  &  \\
+  \hline
+  cpuPercent & String & false & true & 0 &  \\
+  \hline
+  memoryPercent & String & false & true & 0 &  \\
+  \hline
+  diskUsed & Integer & false & true &  &  \\
+  \hline
+  diskPercent & String & false & true &  &  \\
+  \hline
+  bandwidthUsed & Integer & false & true &  &  \\
+  \hline
+  bandwidthPercent & String & false & true &  &  \\
+  \hline
+  monitoringInterval & Integer & false & true &  &  \\
+  \hline
+  cpuMaxValue & Integer & false & true &  &  \\
+  \hline
+  memoryMaxValue & Integer & false & true &  &  \\
+  \hline
+  coreMax & Integer & false & true & 1 &  \\
+  \hline
+\end{tabularx}
+\end{itemize}
+
+\begin{itemize}
+\item \textbf{\texttt{Container} actions}
+
+\begin{itemize}
+	\item \textbf{Scheme}: http://occiware.org/occi/docker/container/action\#
+\end{itemize}
+
+\begin{center}
+\begin{tabular}{|l|l|l|}
+  \hline
+  \textbf{Term}  & \textbf{Attributes} & \textbf{Title} \\
+  \hline  
+  create & &  \\
+  \hline
+  stop & &  \\
+  \hline
+  run & &  \\
+  \hline
+  pause & &  \\
+  \hline
+  unpause & &  \\
+  \hline
+  kill &  signal String &  \\
+  \hline
+\end{tabular}
+\end{center}
+\end{itemize}
+
+
+\subsubsection{\texttt{Link} kind}
+\begin{center}
+\begin{tabular}{|l|l|}
+  \hline
+  \textbf{Name} & Link \\
+  \hline  
+  \textbf{Scheme} & http://occiware.org/occi/docker\# \\
+  \hline
+  \textbf{Title} & Link between containers \\
+  \hline
+  \textbf{Parent} & Link (http://schemas.ogf.org/occi/core\#) \\
+  \hline
+\end{tabular}
+\end{center}
+\begin{itemize}
+\item \textbf{\texttt{Link} attributes}
+
+\begin{tabularx}{\textwidth}{|l|l|p{1.4cm}|p{1.3cm}|l|X|}
+  \hline
+  \textbf{Attribute} & \textbf{Type} & \textbf{Required} & \textbf{Mutable} & \textbf{Default} & \textbf{Description} \\
+  \hline  
+  alias & String & false & true &  &  \\
+  \hline
+\end{tabularx}
+\end{itemize}
+
+
+
+\subsubsection{\texttt{NetworkLink} kind}
+\begin{center}
+\begin{tabular}{|l|l|}
+  \hline
+  \textbf{Name} & NetworkLink \\
+  \hline  
+  \textbf{Scheme} & http://occiware.org/occi/docker\# \\
+  \hline
+  \textbf{Title} &  \\
+  \hline
+  \textbf{Parent} & Link (http://occiware.org/occi/docker\#) \\
+  \hline
+\end{tabular}
+\end{center}
+
+
+
+\subsubsection{\texttt{VolumesFrom} kind}
+\begin{center}
+\begin{tabular}{|l|l|}
+  \hline
+  \textbf{Name} & VolumesFrom \\
+  \hline  
+  \textbf{Scheme} & http://occiware.org/occi/docker\# \\
+  \hline
+  \textbf{Title} & VolumsFrom \\
+  \hline
+  \textbf{Parent} & Link (http://schemas.ogf.org/occi/core\#) \\
+  \hline
+\end{tabular}
+\end{center}
+\begin{itemize}
+\item \textbf{\texttt{VolumesFrom} attributes}
+
+\begin{tabularx}{\textwidth}{|l|l|p{1.4cm}|p{1.3cm}|l|X|}
+  \hline
+  \textbf{Attribute} & \textbf{Type} & \textbf{Required} & \textbf{Mutable} & \textbf{Default} & \textbf{Description} \\
+  \hline  
+  mode & Mode & false & true & readWrite &  \\
+  \hline
+\end{tabularx}
+\end{itemize}
+
+
+
+\subsubsection{\texttt{Contains} kind}
+\begin{center}
+\begin{tabular}{|l|l|}
+  \hline
+  \textbf{Name} & Contains \\
+  \hline  
+  \textbf{Scheme} & http://occiware.org/occi/docker\# \\
+  \hline
+  \textbf{Title} &  \\
+  \hline
+  \textbf{Parent} & Link (http://schemas.ogf.org/occi/core\#) \\
+  \hline
+\end{tabular}
+\end{center}
+
+
+
+\subsubsection{\texttt{Machine} kind}
+\begin{center}
+\begin{tabular}{|l|l|}
+  \hline
+  \textbf{Name} & Machine \\
+  \hline  
+  \textbf{Scheme} & http://occiware.org/occi/docker\# \\
+  \hline
+  \textbf{Title} & Machine Resource \\
+  \hline
+  \textbf{Parent} & Compute (http://schemas.ogf.org/occi/infrastructure\#) \\
+  \hline
+\end{tabular}
+\end{center}
+\begin{itemize}
+\item \textbf{\texttt{Machine} attributes}
+
+\begin{tabularx}{\textwidth}{|l|l|p{1.4cm}|p{1.3cm}|l|X|}
+  \hline
+  \textbf{Attribute} & \textbf{Type} & \textbf{Required} & \textbf{Mutable} & \textbf{Default} & \textbf{Description} \\
+  \hline  
+  name & String & false & true &  &  \\
+  \hline
+  engineInstallURL & String & false & true &  &  \\
+  \hline
+  engineOpt & String & false & true &  &  \\
+  \hline
+  engineInsecureRegistry & String & false & true &  &  \\
+  \hline
+  engineRegistryMirror & String & false & true &  &  \\
+  \hline
+  engineLabel & String & false & true &  &  \\
+  \hline
+  engineStorageDriver & String & false & true &  &  \\
+  \hline
+  engineEnv & String & false & true &  &  \\
+  \hline
+  swarm & Boolean & false & true &  &  \\
+  \hline
+  swarmImage & String & false & true &  &  \\
+  \hline
+  swarmMaster & Boolean & false & true &  &  \\
+  \hline
+  swarmDiscovery & String & false & true &  &  \\
+  \hline
+  swarmStrategy & String & false & true &  &  \\
+  \hline
+  swarmOpt & String & false & true &  &  \\
+  \hline
+  swarmHost & String & false & true &  &  \\
+  \hline
+  swarmAddr & String & false & true &  &  \\
+  \hline
+  swarmExperimental & String & false & true &  &  \\
+  \hline
+  tlsSan & String & false & true &  &  \\
+  \hline
+\end{tabularx}
+\end{itemize}
+
+
+
+\subsubsection{\texttt{Volume} kind}
+\begin{center}
+\begin{tabular}{|l|l|}
+  \hline
+  \textbf{Name} & Volume \\
+  \hline  
+  \textbf{Scheme} & http://occiware.org/occi/docker\# \\
+  \hline
+  \textbf{Title} & Volume Disk \\
+  \hline
+  \textbf{Parent} & Storage (http://schemas.ogf.org/occi/infrastructure\#) \\
+  \hline
+\end{tabular}
+\end{center}
+\begin{itemize}
+\item \textbf{\texttt{Volume} attributes}
+
+\begin{tabularx}{\textwidth}{|l|l|p{1.4cm}|p{1.3cm}|l|X|}
+  \hline
+  \textbf{Attribute} & \textbf{Type} & \textbf{Required} & \textbf{Mutable} & \textbf{Default} & \textbf{Description} \\
+  \hline  
+  driver & String & false & true & local &  \\
+  \hline
+  labels & String & false & true &  &  \\
+  \hline
+  options & String & false & true &  &  \\
+  \hline
+  source & String & false & true &  &  \\
+  \hline
+  destination & String & false & true &  &  \\
+  \hline
+  mode & String & false & true &  &  \\
+  \hline
+  rw & String & false & true &  &  \\
+  \hline
+  propagation & String & false & true &  &  \\
+  \hline
+  name & String & false & true &  &  \\
+  \hline
+\end{tabularx}
+\end{itemize}
+
+
+
+\subsubsection{\texttt{Network} kind}
+\begin{center}
+\begin{tabular}{|l|l|}
+  \hline
+  \textbf{Name} & Network \\
+  \hline  
+  \textbf{Scheme} & http://occiware.org/occi/docker\# \\
+  \hline
+  \textbf{Title} & Network resource \\
+  \hline
+  \textbf{Parent} & Network (http://schemas.ogf.org/occi/infrastructure\#) \\
+  \hline
+\end{tabular}
+\end{center}
+\begin{itemize}
+\item \textbf{\texttt{Network} attributes}
+
+\begin{tabularx}{\textwidth}{|l|l|p{1.4cm}|p{1.3cm}|l|X|}
+  \hline
+  \textbf{Attribute} & \textbf{Type} & \textbf{Required} & \textbf{Mutable} & \textbf{Default} & \textbf{Description} \\
+  \hline  
+  networkId & String & false & true &  &  \\
+  \hline
+  name & String & false & true &  &  \\
+  \hline
+  auxAddress & String & false & true &  &  \\
+  \hline
+  driver & String & false & true &  &  \\
+  \hline
+  gateway & String & false & true &  &  \\
+  \hline
+  internal & Boolean & false & true &  &  \\
+  \hline
+  ipRange & String & false & true &  &  \\
+  \hline
+  ipamDriver & String & false & true &  &  \\
+  \hline
+  ipamOpt & String & false & true &  &  \\
+  \hline
+  ipv6 & Boolean & false & true &  &  \\
+  \hline
+  opt & String & false & true &  &  \\
+  \hline
+  subnet & String & false & true &  &  \\
+  \hline
+\end{tabularx}
+\end{itemize}
+
+
+
+\subsubsection{\texttt{MachineGeneric} kind}
+\begin{center}
+\begin{tabular}{|l|l|}
+  \hline
+  \textbf{Name} & MachineGeneric \\
+  \hline  
+  \textbf{Scheme} & http://occiware.org/occi/docker\# \\
+  \hline
+  \textbf{Title} & Create machines using an existing VM/Host with SSH \\
+  \hline
+  \textbf{Parent} & Machine (http://occiware.org/occi/docker\#) \\
+  \hline
+\end{tabular}
+\end{center}
+\begin{itemize}
+\item \textbf{\texttt{MachineGeneric} attributes}
+
+\begin{tabularx}{\textwidth}{|l|l|p{1.4cm}|p{1.3cm}|l|X|}
+  \hline
+  \textbf{Attribute} & \textbf{Type} & \textbf{Required} & \textbf{Mutable} & \textbf{Default} & \textbf{Description} \\
+  \hline  
+  enginePort & Integer & false & true &  &  \\
+  \hline
+  ipAddress & String & false & true &  &  \\
+  \hline
+  sshKey & String & false & true &  &  \\
+  \hline
+  sshUser & String & false & true &  &  \\
+  \hline
+  sshPort & Integer & false & true & 22 &  \\
+  \hline
+\end{tabularx}
+\end{itemize}
+
+
+
+\subsubsection{\texttt{MachineAmazonEC2} kind}
+\begin{center}
+\begin{tabular}{|l|l|}
+  \hline
+  \textbf{Name} & MachineAmazonEC2 \\
+  \hline  
+  \textbf{Scheme} & http://occiware.org/occi/docker\# \\
+  \hline
+  \textbf{Title} &  \\
+  \hline
+  \textbf{Parent} & Machine (http://occiware.org/occi/docker\#) \\
+  \hline
+\end{tabular}
+\end{center}
+\begin{itemize}
+\item \textbf{\texttt{MachineAmazonEC2} attributes}
+
+\begin{tabularx}{\textwidth}{|l|l|p{1.4cm}|p{1.3cm}|l|X|}
+  \hline
+  \textbf{Attribute} & \textbf{Type} & \textbf{Required} & \textbf{Mutable} & \textbf{Default} & \textbf{Description} \\
+  \hline  
+  accessKey & String & false & true &  &  \\
+  \hline
+  ami & String & false & true & ami-4ae27e22 &  \\
+  \hline
+  instanceType & String & false & true & t2.micro &  \\
+  \hline
+  region & String & false & true & us-east-1 &  \\
+  \hline
+  rootSize & Integer & false & true & 16 &  \\
+  \hline
+  secretKey & String & false & true &  &  \\
+  \hline
+  securityGroup & String & false & true & docker-machine &  \\
+  \hline
+  sessionToken & String & false & true &  &  \\
+  \hline
+  subnetId & String & false & true &  &  \\
+  \hline
+  vpcId & String & false & true &  &  \\
+  \hline
+  zone & String & false & true & a &  \\
+  \hline
+\end{tabularx}
+\end{itemize}
+
+
+
+\subsubsection{\texttt{MachineDigitalOcean} kind}
+\begin{center}
+\begin{tabular}{|l|l|}
+  \hline
+  \textbf{Name} & MachineDigitalOcean \\
+  \hline  
+  \textbf{Scheme} & http://occiware.org/occi/docker\# \\
+  \hline
+  \textbf{Title} & Machine on Digital Ocean \\
+  \hline
+  \textbf{Parent} & Machine (http://occiware.org/occi/docker\#) \\
+  \hline
+\end{tabular}
+\end{center}
+\begin{itemize}
+\item \textbf{\texttt{MachineDigitalOcean} attributes}
+
+\begin{tabularx}{\textwidth}{|l|l|p{1.4cm}|p{1.3cm}|l|X|}
+  \hline
+  \textbf{Attribute} & \textbf{Type} & \textbf{Required} & \textbf{Mutable} & \textbf{Default} & \textbf{Description} \\
+  \hline  
+  accessToken & String & false & true &  &  \\
+  \hline
+  image & String & false & true & docker &  \\
+  \hline
+  region & String & false & true & nyc3 &  \\
+  \hline
+  size & String & false & true & 512mb &  \\
+  \hline
+\end{tabularx}
+\end{itemize}
+
+
+
+\subsubsection{\texttt{MachineGoogleComputeEngine} kind}
+\begin{center}
+\begin{tabular}{|l|l|}
+  \hline
+  \textbf{Name} & MachineGoogleComputeEngine \\
+  \hline  
+  \textbf{Scheme} & http://occiware.org/occi/docker\# \\
+  \hline
+  \textbf{Title} & Machine on Google Compute Engine \\
+  \hline
+  \textbf{Parent} & Machine (http://occiware.org/occi/docker\#) \\
+  \hline
+\end{tabular}
+\end{center}
+\begin{itemize}
+\item \textbf{\texttt{MachineGoogleComputeEngine} attributes}
+
+\begin{tabularx}{\textwidth}{|l|l|p{1.4cm}|p{1.3cm}|l|X|}
+  \hline
+  \textbf{Attribute} & \textbf{Type} & \textbf{Required} & \textbf{Mutable} & \textbf{Default} & \textbf{Description} \\
+  \hline  
+  zone & String & false & true & us-central1-a &  \\
+  \hline
+  machineType & String & false & true & f1-micro &  \\
+  \hline
+  username & String & false & true & docker-user &  \\
+  \hline
+  instanceName & String & false & true & docker-machine &  \\
+  \hline
+  project & String & false & true &  &  \\
+  \hline
+\end{tabularx}
+\end{itemize}
+
+
+
+\subsubsection{\texttt{MachineIBMSoftLayer} kind}
+\begin{center}
+\begin{tabular}{|l|l|}
+  \hline
+  \textbf{Name} & MachineIBMSoftLayer \\
+  \hline  
+  \textbf{Scheme} & http://occiware.org/occi/docker\# \\
+  \hline
+  \textbf{Title} & Machine on IBM SoftLayer \\
+  \hline
+  \textbf{Parent} & Machine (http://occiware.org/occi/docker\#) \\
+  \hline
+\end{tabular}
+\end{center}
+\begin{itemize}
+\item \textbf{\texttt{MachineIBMSoftLayer} attributes}
+
+\begin{tabularx}{\textwidth}{|l|l|p{1.4cm}|p{1.3cm}|l|X|}
+  \hline
+  \textbf{Attribute} & \textbf{Type} & \textbf{Required} & \textbf{Mutable} & \textbf{Default} & \textbf{Description} \\
+  \hline  
+  apiEndpoint & String & false & true & api.softlayer.com/rest/v3 &  \\
+  \hline
+  user & String & false & true &  &  \\
+  \hline
+  apiKey & String & false & true &  &  \\
+  \hline
+  cpu & Integer & false & true &  &  \\
+  \hline
+  diskSize & Integer & false & true &  &  \\
+  \hline
+  domain & String & false & true &  &  \\
+  \hline
+  hourlyBilling & Boolean & false & true & false &  \\
+  \hline
+  image & String & false & true & UBUNTU\_LATEST &  \\
+  \hline
+  localDisk & Boolean & false & true & false &  \\
+  \hline
+  privateNetOnly & Boolean & false & true &  &  \\
+  \hline
+  region & String & false & true &  &  \\
+  \hline
+  publicVlanId & String & false & true & 0 &  \\
+  \hline
+  privateVlanId & String & false & true & 0 &  \\
+  \hline
+\end{tabularx}
+\end{itemize}
+
+
+
+\subsubsection{\texttt{MachineMicrosoftAzure} kind}
+\begin{center}
+\begin{tabular}{|l|l|}
+  \hline
+  \textbf{Name} & MachineMicrosoftAzure \\
+  \hline  
+  \textbf{Scheme} & http://occiware.org/occi/docker\# \\
+  \hline
+  \textbf{Title} & Machine on Microsoft Azure \\
+  \hline
+  \textbf{Parent} & Machine (http://occiware.org/occi/docker\#) \\
+  \hline
+\end{tabular}
+\end{center}
+\begin{itemize}
+\item \textbf{\texttt{MachineMicrosoftAzure} attributes}
+
+\begin{tabularx}{\textwidth}{|l|l|p{1.4cm}|p{1.3cm}|l|X|}
+  \hline
+  \textbf{Attribute} & \textbf{Type} & \textbf{Required} & \textbf{Mutable} & \textbf{Default} & \textbf{Description} \\
+  \hline  
+  subscriptionId & String & false & true &  &  \\
+  \hline
+  subscriptionCert & String & false & true &  &  \\
+  \hline
+  environment & String & false & true & AzurePublicCloud &  \\
+  \hline
+  machineLocation & String & false & true &  &  \\
+  \hline
+  resourceGroup & String & false & true & docker-machine &  \\
+  \hline
+  size & String & false & true &  &  \\
+  \hline
+  sshUser & String & false & true &  &  \\
+  \hline
+  vnet & String & false & true &  &  \\
+  \hline
+  subnet & String & false & true &  &  \\
+  \hline
+  subnetPrefix & String & false & true & 192.168.0.0/16 &  \\
+  \hline
+  availabilitySet & String & false & true & docker-machine &  \\
+  \hline
+  openPort & Integer & false & true &  &  \\
+  \hline
+  privateIpAddress & String & false & true &  &  \\
+  \hline
+  noPublicIp & String & false & true &  &  \\
+  \hline
+  staticPublicIp & String & false & true &  &  \\
+  \hline
+  dockerPort & String & false & true & 2376 &  \\
+  \hline
+  usePrivateIp & String & false & true &  &  \\
+  \hline
+  image & String & false & true &  &  \\
+  \hline
+\end{tabularx}
+\end{itemize}
+
+
+
+\subsubsection{\texttt{MachineMicrosoftHyperV} kind}
+\begin{center}
+\begin{tabular}{|l|l|}
+  \hline
+  \textbf{Name} & MachineMicrosoftHyperV \\
+  \hline  
+  \textbf{Scheme} & http://occiware.org/occi/docker\# \\
+  \hline
+  \textbf{Title} & Machine on Microsoft Hyper-V \\
+  \hline
+  \textbf{Parent} & Machine (http://occiware.org/occi/docker\#) \\
+  \hline
+\end{tabular}
+\end{center}
+\begin{itemize}
+\item \textbf{\texttt{MachineMicrosoftHyperV} attributes}
+
+\begin{tabularx}{\textwidth}{|l|l|p{1.4cm}|p{1.3cm}|l|X|}
+  \hline
+  \textbf{Attribute} & \textbf{Type} & \textbf{Required} & \textbf{Mutable} & \textbf{Default} & \textbf{Description} \\
+  \hline  
+  virtualSwitch & String & false & true &  &  \\
+  \hline
+  boot2dockerURL & String & false & true &  &  \\
+  \hline
+  diskSize & Integer & false & true & 20000 &  \\
+  \hline
+  staticMacAddress & Mac & false & true &  &  \\
+  \hline
+  vlanId & String & false & true &  &  \\
+  \hline
+\end{tabularx}
+\end{itemize}
+
+
+
+\subsubsection{\texttt{MachineOpenStack} kind}
+\begin{center}
+\begin{tabular}{|l|l|}
+  \hline
+  \textbf{Name} & MachineOpenStack \\
+  \hline  
+  \textbf{Scheme} & http://occiware.org/occi/docker\# \\
+  \hline
+  \textbf{Title} & Machine on OpenStack \\
+  \hline
+  \textbf{Parent} & Machine (http://occiware.org/occi/docker\#) \\
+  \hline
+\end{tabular}
+\end{center}
+\begin{itemize}
+\item \textbf{\texttt{MachineOpenStack} attributes}
+
+\begin{tabularx}{\textwidth}{|l|l|p{1.4cm}|p{1.3cm}|l|X|}
+  \hline
+  \textbf{Attribute} & \textbf{Type} & \textbf{Required} & \textbf{Mutable} & \textbf{Default} & \textbf{Description} \\
+  \hline  
+  flavorId & String & false & true &  &  \\
+  \hline
+  flavorName & String & false & true &  &  \\
+  \hline
+  imageId & String & false & true &  &  \\
+  \hline
+  imageName & String & false & true &  &  \\
+  \hline
+  authUrl & String & false & true &  &  \\
+  \hline
+  username & String & false & true &  &  \\
+  \hline
+  password & String & false & true &  &  \\
+  \hline
+  tenantName & String & false & true &  &  \\
+  \hline
+  tenantId & String & false & true &  &  \\
+  \hline
+  region & String & false & true &  &  \\
+  \hline
+  endpointType & String & false & true & publicURL &  \\
+  \hline
+  netId & String & false & true &  &  \\
+  \hline
+  netName & String & false & true &  &  \\
+  \hline
+  secGroups & String & false & true &  &  \\
+  \hline
+  floatingIpPool & String & false & true &  &  \\
+  \hline
+  activeTimeOut & Integer & false & true & 200 &  \\
+  \hline
+  availabilityZone & String & false & true &  &  \\
+  \hline
+  domainId & String & false & true &  &  \\
+  \hline
+  domainName & String & false & true &  &  \\
+  \hline
+  insecure & Boolean & false & true & false &  \\
+  \hline
+  ipVersion & Integer & false & true & 4 &  \\
+  \hline
+  keypairName & String & false & true &  &  \\
+  \hline
+  privateKeyFile & String & false & true &  &  \\
+  \hline
+  sshPort & Integer & false & true & 22 &  \\
+  \hline
+  sshUser & String & false & true & root &  \\
+  \hline
+\end{tabularx}
+\end{itemize}
+
+
+
+\subsubsection{\texttt{MachineRackspace} kind}
+\begin{center}
+\begin{tabular}{|l|l|}
+  \hline
+  \textbf{Name} & MachineRackspace \\
+  \hline  
+  \textbf{Scheme} & http://occiware.org/occi/docker\# \\
+  \hline
+  \textbf{Title} & Machine on Rackspace cloud \\
+  \hline
+  \textbf{Parent} & Machine (http://occiware.org/occi/docker\#) \\
+  \hline
+\end{tabular}
+\end{center}
+\begin{itemize}
+\item \textbf{\texttt{MachineRackspace} attributes}
+
+\begin{tabularx}{\textwidth}{|l|l|p{1.4cm}|p{1.3cm}|l|X|}
+  \hline
+  \textbf{Attribute} & \textbf{Type} & \textbf{Required} & \textbf{Mutable} & \textbf{Default} & \textbf{Description} \\
+  \hline  
+  username & String & false & true &  &  \\
+  \hline
+  apiKey & String & false & true &  &  \\
+  \hline
+  region & String & false & true &  &  \\
+  \hline
+  endPointType & String & false & true & publicURL &  \\
+  \hline
+  imageId & String & false & true & 59a3fadd-93e7-4674-886a-64883e17115f &  \\
+  \hline
+  flavorId & String & false & true & general1-1 &  \\
+  \hline
+  sshUser & String & false & true & root &  \\
+  \hline
+  sshPort & Integer & false & true & 22 &  \\
+  \hline
+  dockerInstall & Boolean & false & true & true &  \\
+  \hline
+\end{tabularx}
+\end{itemize}
+
+
+
+\subsubsection{\texttt{MachineVirtualBox} kind}
+\begin{center}
+\begin{tabular}{|l|l|}
+  \hline
+  \textbf{Name} & MachineVirtualBox \\
+  \hline  
+  \textbf{Scheme} & http://occiware.org/occi/docker\# \\
+  \hline
+  \textbf{Title} & Machine on VirtualBox \\
+  \hline
+  \textbf{Parent} & Machine (http://occiware.org/occi/docker\#) \\
+  \hline
+\end{tabular}
+\end{center}
+\begin{itemize}
+\item \textbf{\texttt{MachineVirtualBox} attributes}
+
+\begin{tabularx}{\textwidth}{|l|l|p{1.4cm}|p{1.3cm}|l|X|}
+  \hline
+  \textbf{Attribute} & \textbf{Type} & \textbf{Required} & \textbf{Mutable} & \textbf{Default} & \textbf{Description} \\
+  \hline  
+  boot2dockerURL & String & false & true &  &  \\
+  \hline
+  diskSize & Integer & false & true & 20000 &  \\
+  \hline
+  hostDNSResolver & Boolean & false & true & false &  \\
+  \hline
+  importBoot2DockerVM & String & false & true &  &  \\
+  \hline
+  hostOnlyCIDR & String & false & true & 192.168.99.1/24 &  \\
+  \hline
+  hostOnlyNICType & String & false & true & 82540EM &  \\
+  \hline
+  hostOnlyNICPromisc & String & false & true & deny &  \\
+  \hline
+  noShare & Boolean & false & true & false &  \\
+  \hline
+  noDNSProxy & Boolean & false & true & false &  \\
+  \hline
+  noVTXCheck & Boolean & false & true & false &  \\
+  \hline
+  shareFolder & String & false & true &  &  \\
+  \hline
+\end{tabularx}
+\end{itemize}
+
+
+
+\subsubsection{\texttt{MachineVMwareFusion} kind}
+\begin{center}
+\begin{tabular}{|l|l|}
+  \hline
+  \textbf{Name} & MachineVMwareFusion \\
+  \hline  
+  \textbf{Scheme} & http://occiware.org/occi/docker\# \\
+  \hline
+  \textbf{Title} & Machine on VMware Fusion \\
+  \hline
+  \textbf{Parent} & Machine (http://occiware.org/occi/docker\#) \\
+  \hline
+\end{tabular}
+\end{center}
+\begin{itemize}
+\item \textbf{\texttt{MachineVMwareFusion} attributes}
+
+\begin{tabularx}{\textwidth}{|l|l|p{1.4cm}|p{1.3cm}|l|X|}
+  \hline
+  \textbf{Attribute} & \textbf{Type} & \textbf{Required} & \textbf{Mutable} & \textbf{Default} & \textbf{Description} \\
+  \hline  
+  boot2dockerURL & String & false & true &  &  \\
+  \hline
+  diskSize & Integer & false & true & 20000 &  \\
+  \hline
+  memorySize & Integer & false & true & 1024 &  \\
+  \hline
+  noShare & Boolean & false & true & false &  \\
+  \hline
+\end{tabularx}
+\end{itemize}
+
+
+
+\subsubsection{\texttt{MachineVMwareVCloudAir} kind}
+\begin{center}
+\begin{tabular}{|l|l|}
+  \hline
+  \textbf{Name} & MachineVMwareVCloudAir \\
+  \hline  
+  \textbf{Scheme} & http://occiware.org/occi/docker\# \\
+  \hline
+  \textbf{Title} & Machine on VMware vCloud Air \\
+  \hline
+  \textbf{Parent} & Machine (http://occiware.org/occi/docker\#) \\
+  \hline
+\end{tabular}
+\end{center}
+\begin{itemize}
+\item \textbf{\texttt{MachineVMwareVCloudAir} attributes}
+
+\begin{tabularx}{\textwidth}{|l|l|p{1.4cm}|p{1.3cm}|l|X|}
+  \hline
+  \textbf{Attribute} & \textbf{Type} & \textbf{Required} & \textbf{Mutable} & \textbf{Default} & \textbf{Description} \\
+  \hline  
+  username & String & false & true &  &  \\
+  \hline
+  password & String & false & true &  &  \\
+  \hline
+  catalog & String & false & true & Public Catalog &  \\
+  \hline
+  catalogItem & String & false & true & Ubuntu Server 12.04 LTS (amd64 20140927) &  \\
+  \hline
+  computeId & String & false & true &  &  \\
+  \hline
+  cpuCount & Integer & false & true & 1 &  \\
+  \hline
+  dockerPort & Integer & false & true & 2376 &  \\
+  \hline
+  edgegateway & String & false & true & &lt;vdcid> &  \\
+  \hline
+  memorySize & Integer & false & true & 2048 &  \\
+  \hline
+  vappName & String & false & true & &lt;autogenerated> &  \\
+  \hline
+  orgvdcnetwork & String & false & true & &lt;vdcid>-default-routed &  \\
+  \hline
+  provision & Boolean & false & true & true &  \\
+  \hline
+  publicIp & String & false & true &  &  \\
+  \hline
+  sshPort & Integer & false & true & 22 &  \\
+  \hline
+  vdcId & String & false & true &  &  \\
+  \hline
+\end{tabularx}
+\end{itemize}
+
+
+
+\subsubsection{\texttt{MachineVMwareVSphere} kind}
+\begin{center}
+\begin{tabular}{|l|l|}
+  \hline
+  \textbf{Name} & MachineVMwareVSphere \\
+  \hline  
+  \textbf{Scheme} & http://occiware.org/occi/docker\# \\
+  \hline
+  \textbf{Title} & Machine on VMware vSphere \\
+  \hline
+  \textbf{Parent} & Machine (http://occiware.org/occi/docker\#) \\
+  \hline
+\end{tabular}
+\end{center}
+\begin{itemize}
+\item \textbf{\texttt{MachineVMwareVSphere} attributes}
+
+\begin{tabularx}{\textwidth}{|l|l|p{1.4cm}|p{1.3cm}|l|X|}
+  \hline
+  \textbf{Attribute} & \textbf{Type} & \textbf{Required} & \textbf{Mutable} & \textbf{Default} & \textbf{Description} \\
+  \hline  
+  username & String & false & true &  &  \\
+  \hline
+  password & String & false & true &  &  \\
+  \hline
+  boot2dockerURL & String & false & true &  &  \\
+  \hline
+  computeIp & String & false & true &  &  \\
+  \hline
+  cpuCount & Integer & false & true & 2 &  \\
+  \hline
+  datacenter & String & false & true &  &  \\
+  \hline
+  datastore & String & false & true &  &  \\
+  \hline
+  diskSize & Integer & false & true & 20000 &  \\
+  \hline
+  memorySize & Integer & false & true & 2048 &  \\
+  \hline
+  network & String & false & true &  &  \\
+  \hline
+  pool & String & false & true &  &  \\
+  \hline
+  vcenter & String & false & true &  &  \\
+  \hline
+\end{tabularx}
+\end{itemize}
+
+
+
+\subsubsection{\texttt{MachineExoscale} kind}
+\begin{center}
+\begin{tabular}{|l|l|}
+  \hline
+  \textbf{Name} & MachineExoscale \\
+  \hline  
+  \textbf{Scheme} & http://occiware.org/occi/docker\# \\
+  \hline
+  \textbf{Title} & Machine Exoscale \\
+  \hline
+  \textbf{Parent} & Machine (http://occiware.org/occi/docker\#) \\
+  \hline
+\end{tabular}
+\end{center}
+\begin{itemize}
+\item \textbf{\texttt{MachineExoscale} attributes}
+
+\begin{tabularx}{\textwidth}{|l|l|p{1.4cm}|p{1.3cm}|l|X|}
+  \hline
+  \textbf{Attribute} & \textbf{Type} & \textbf{Required} & \textbf{Mutable} & \textbf{Default} & \textbf{Description} \\
+  \hline  
+  url & String & false & true & https://api.exoscale.ch/compute &  \\
+  \hline
+  apiKey & String & false & true &  &  \\
+  \hline
+  apiSecretKey & String & false & true &  &  \\
+  \hline
+  instanceProfile & String & false & true & small &  \\
+  \hline
+  image & String & false & true & ubuntu-16.04 &  \\
+  \hline
+  securityGroup & String & false & true &  &  \\
+  \hline
+  availabilityZone & String & false & true &  &  \\
+  \hline
+  sshUser & String & false & true & ubuntu &  \\
+  \hline
+  userData & String & false & true &  &  \\
+  \hline
+  affinityGroup & String & false & true & docker-machine &  \\
+  \hline
+\end{tabularx}
+\end{itemize}
+
+
+
+\subsubsection{\texttt{MachineGrid5000} kind}
+\begin{center}
+\begin{tabular}{|l|l|}
+  \hline
+  \textbf{Name} & MachineGrid5000 \\
+  \hline  
+  \textbf{Scheme} & http://occiware.org/occi/docker\# \\
+  \hline
+  \textbf{Title} & Grid5000 \\
+  \hline
+  \textbf{Parent} & Machine (http://occiware.org/occi/docker\#) \\
+  \hline
+\end{tabular}
+\end{center}
+\begin{itemize}
+\item \textbf{\texttt{MachineGrid5000} attributes}
+
+\begin{tabularx}{\textwidth}{|l|l|p{1.4cm}|p{1.3cm}|l|X|}
+  \hline
+  \textbf{Attribute} & \textbf{Type} & \textbf{Required} & \textbf{Mutable} & \textbf{Default} & \textbf{Description} \\
+  \hline  
+  username & String & false & true &  &  \\
+  \hline
+  password & String & false & true &  &  \\
+  \hline
+  site & String & false & true &  &  \\
+  \hline
+  walltime & String & false & true &  &  \\
+  \hline
+  sshPrivateKey & String & false & true &  &  \\
+  \hline
+  sshPublicKey & String & false & true &  &  \\
+  \hline
+  image & String & false & true &  &  \\
+  \hline
+  resourceProperties & String & false & true &  &  \\
+  \hline
+  useJobReservation & String & false & true &  &  \\
+  \hline
+  hostToProvision & String & false & true &  &  \\
+  \hline
+\end{tabularx}
+\end{itemize}
+
+
+
+\subsubsection{\texttt{Cluster} kind}
+\begin{center}
+\begin{tabular}{|l|l|}
+  \hline
+  \textbf{Name} & Cluster \\
+  \hline  
+  \textbf{Scheme} & http://occiware.org/occi/docker\# \\
+  \hline
+  \textbf{Title} & Docker cluster \\
+  \hline
+  \textbf{Parent} & Compute (http://schemas.ogf.org/occi/infrastructure\#) \\
+  \hline
+\end{tabular}
+\end{center}
+\begin{itemize}
+\item \textbf{\texttt{Cluster} attributes}
+
+\begin{tabularx}{\textwidth}{|l|l|p{1.4cm}|p{1.3cm}|l|X|}
+  \hline
+  \textbf{Attribute} & \textbf{Type} & \textbf{Required} & \textbf{Mutable} & \textbf{Default} & \textbf{Description} \\
+  \hline  
+  name & String & false & true &  &  \\
+  \hline
+\end{tabularx}
+\end{itemize}
+
+
+
